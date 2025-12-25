@@ -1,11 +1,23 @@
-@import "tailwindcss";
-@plugin "daisyui";
-
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
 
+@plugin "daisyui" {
+  /* This tells DaisyUI to use your custom 'light' theme as the default */
+  themes: light --default;
+}
 
-body {
-  font-family: "Urbanist", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+@plugin "daisyui/theme" {
+  name: "light";
+  /* DaisyUI v5 uses these shorthand names */
+  primary: #CAEB66;      /* The Lime Green */
+  secondary: #03373D;    /* The Dark Teal */
+  
+  /* Optional: You can also set text colors for the buttons */
+  primary-content: #03373D; 
+  secondary-content: #ffffff;
+}
+
+@theme {
+  /* This ensures Tailwind's font-sans utility uses Urbanist */
+  --font-sans: "Urbanist", sans-serif;
 }

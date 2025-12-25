@@ -3,15 +3,22 @@ import Logo from './Logo';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center text-primary-content p-10">
+        <footer className="footer footer-horizontal footer-center text-white bg-black p-10">
             <aside>
-               <Logo></Logo>
+                <Logo></Logo>
                 <p className="font-bold">
-                    ACME Industries Ltd.
-                    <br />
-                    Providing reliable tech since 1992
+                    Enjoy fast, reliable parcel delivery with real-time tracking and zero hassle. From personal packages to <br /> business shipments — we deliver on time, every time.
                 </p>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
+                <div className=" flex gap-8 my-10">
+                    <p>Services</p>
+                    <p>Coverage</p>
+                    <p>About Us</p>
+                    <p>Pricing</p>
+                    <p>Blog</p>
+                    <p>Contact</p>
+                </div>
+                        
+              <p className=''>Copyright © {new Date().getFullYear()} - All right reserved</p>
             </aside>
             <nav>
                 <div className="grid grid-flow-col gap-4">
