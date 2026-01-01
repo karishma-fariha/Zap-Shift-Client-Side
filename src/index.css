@@ -2,22 +2,29 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  /* This tells DaisyUI to use your custom 'light' theme as the default */
   themes: light --default;
 }
 
-@plugin "daisyui/theme" {
-  name: "light";
-  /* DaisyUI v5 uses these shorthand names */
-  primary: #CAEB66;      /* The Lime Green */
-  secondary: #03373D;    /* The Dark Teal */
-  
-  /* Optional: You can also set text colors for the buttons */
-  primary-content: #03373D; 
-  secondary-content: #ffffff;
+/* 1. Define the variables globally for the browser */
+:root {
+  --color-primary: #CAEB66;
+  --color-secondary: #03373D;
+  --color-accent: #606060; /* Added a default accent color so text-accent works */
 }
 
+/* 2. Map those variables to Tailwind utilities */
 @theme {
-  /* This ensures Tailwind's font-sans utility uses Urbanist */
   --font-sans: "Urbanist", sans-serif;
+  
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+}
+
+/* 3. Map those variables to DaisyUI components */
+@plugin "daisyui/theme" {
+  name: "light";
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
 }

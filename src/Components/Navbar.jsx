@@ -4,9 +4,10 @@ import { NavLink } from 'react-router';
 
 const Navbar = () => {
     const links = <>
+        <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to='/service'>Service</NavLink></li>
         <li><NavLink to='/coverage'>Coverage</NavLink></li>
-        <li><NavLink to='/about Us'>About Us</NavLink></li>
+        <li><NavLink to='/aboutUs'>About Us</NavLink></li>
         <li><NavLink to='/pricing'>Pricing</NavLink></li>
         <li><NavLink to='/blog'>Blog</NavLink></li>
         <li><NavLink to='/contact'>Contact</NavLink></li>
@@ -21,14 +22,14 @@ const Navbar = () => {
                     <ul
                         tabIndex="-1"
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                       {links}
+                        {links}
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl"><Logo></Logo></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                   {links}
+                    {links}
                 </ul>
             </div>
             <div className="navbar-end">
